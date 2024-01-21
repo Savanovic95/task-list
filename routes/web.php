@@ -80,6 +80,8 @@ Route::get('/tasks', function (){
     return view('index',['tasks'=>$tasks]);
 })->name('tasks.index');
 
+Route::get('/tasks/create', 'create')->name('tasks.create');
+
 Route::get('/tasks/{id}', function ($id) use ($tasks){
 
     $task = \App\Models\Task::findOrFail($id);
